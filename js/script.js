@@ -44,11 +44,25 @@ const gameStart = (speed) => {
     createPothole()
 
     pothole.forEach((hole) => {
-      if (hole.style.gridRowStart < 10) {
+      const holeX = hole.style.gridColumnStart
+      const holeY = hole.style.gridRowStart
+      const carX = carPos.style.gridColumnStart
+      const carY = carPos.style.gridRowStart
+
+      if (carX === holeX && carY === holeY) {
+        clearInterval(gameSpeed)
+        alert('gameOver')
+      }
+
+      console.log(holeX + ' ' + holeY)
+
+      if (hole.style.gridRowStart > 9) {
+        hole.parentNode.removeChild(hole)
+      } else if (hole.style.gridRowStart < 10) {
         hole.style.gridRowStart++
       }
     })
-  }, 1000)
+  }, 500)
 }
 
 gameStart()
