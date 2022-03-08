@@ -38,7 +38,8 @@ h1 {
   grid-template: repeat(10, 1fr) / repeat(3, 1fr);
 
   background-image: url('../Image/3lane.png');
-  background-size: 400px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-position: center;
 }
 
