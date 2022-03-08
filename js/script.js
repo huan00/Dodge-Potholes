@@ -181,6 +181,7 @@ window.addEventListener('keydown', (e) => {
 })
 
 playAgain.addEventListener('click', () => {
+  f
   resetGame()
   gameStart()
 })

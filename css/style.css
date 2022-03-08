@@ -84,8 +84,7 @@ h1 {
   border-radius: 20px;
   opacity: 0.8;
   padding: auto 20px;
-  text-align: center;
-  text-justify: center;
+
   background-color: gray;
 }
 button {
@@ -99,10 +98,11 @@ button {
 }
 
 #content {
+  text-align: center;
   position: relative;
   width: fit-content;
   height: fit-content;
-  margin: 30px;
+  margin: 30px auto;
 }
 
 #content li {
@@ -214,4 +214,20 @@ button {
 
 .bg1 {
   cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  #modal {
+    font-family: 'Syne Mono';
+    position: absolute;
+    width: 40%;
+    height: 50%;
+
+    border-radius: 20px;
+    opacity: 0.8;
+    padding: auto 20px;
+    text-align: center;
+    text-justify: center;
+    background-color: gray;
+  }
 }
