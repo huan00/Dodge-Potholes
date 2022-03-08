@@ -13,13 +13,36 @@
   <div id="container">
   
     <div id="gameContent">
-      <div class="background"></div>
+      <div class="background">
+        <div id="healthBar"></div>
+        <div class="movingTree"></div>
+      </div>
       <div id="gameboard">
 
       </div>
-      <div class="background"></div>
+      <div class="background">
+        <p id="score">score: <span id="currentScore">0</span></p>
+      </div>
     </div>
     
+
+    <div id="modal"> 
+      <div id="content">
+        <h3>Welcome to Dodge PotHole</h3>
+        <p>Game Rules</p>
+        <ul>
+          <li>Use Arrow to control Car</li>
+          <li>Dodge any PotHole Coming your way</li>
+        </ul>
+        <p>click to start Game</p>
+        <button id="start">Start</button>
+      </div>
+    </div>
+    <div id="lose">
+      <h2>Game Over</h2>
+      <p>Your Score is <span id="finalScore"></span></p>
+      <button id="playAgain">Play Again</button>
+    </div>
   </div>
 </body>
 </html>
