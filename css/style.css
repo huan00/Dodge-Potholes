@@ -49,7 +49,7 @@ h1 {
 
 #car {
   border-radius: 30px;
-  /* background-color: black; */
+  background-image: url('../Image/red.png');
   background-size: 60px 80px;
   background-repeat: no-repeat;
   background-position: center;

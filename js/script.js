@@ -27,7 +27,6 @@ const createCar = () => {
   carDiv.setAttribute('id', 'car')
   carDiv.style.gridRowStart = 9
   carDiv.style.gridColumnStart = 2
-  carDiv.style.backgroundImage = "url('../image/red.png')"
   gameboard.appendChild(carDiv)
 }
 const createPothole = () => {
@@ -175,7 +174,7 @@ playAgain.addEventListener('click', () => {
   resetGame()
   gameStart()
 })
-console.log(bgDiv)
+
 sideBar.forEach((div, index) => {
   div.addEventListener('click', () => {
     sideBar[0].style.backgroundImage = "url('../image/thunder.jpeg')"
