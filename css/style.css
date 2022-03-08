@@ -37,8 +37,9 @@ h1 {
   display: grid;
   grid-template: repeat(10, 1fr) / repeat(3, 1fr);
 
-  border-left: 10px dashed black;
-  border-right: 10px dashed black;
+  background-image: url('../Image/3lane.png');
+  background-size: 400px;
+  background-position: center;
 }
 
 .road {
@@ -155,4 +156,12 @@ button {
   100% {
     width: 0%;
   }
+}
+
+.sidebar {
+  height: 100%;
+  background-image: url('../Image/hill.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

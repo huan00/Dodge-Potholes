@@ -7,6 +7,9 @@ const loseModal = document.querySelector('#lose')
 const finalScore = document.querySelector('#finalScore')
 const playAgain = document.querySelector('#playAgain')
 const healthBar = document.querySelector('#healthBar')
+const bgDiv = document.querySelectorAll('.background')
+const sideBar = document.querySelectorAll('.sidebar')
+const gameTitle = document.querySelector('#gameTitle')
 
 //global
 let speed = 1000
@@ -50,6 +53,7 @@ const update = (num) => {
   if (num % 3 != 0) {
     createPothole()
   }
+
   if (gameOver()) {
     return
   } else {
@@ -108,6 +112,7 @@ const resetGame = () => {
   loseModal.style.display = 'none'
   speed = 1000
 }
+
 /********************************************************************
  *
  *
@@ -131,6 +136,7 @@ const gameStart = (timestamp) => {
 
 start.addEventListener('click', () => {
   gameStart()
+
   modal.style.display = 'none'
 })
 const carPos = document.querySelector('#car')
@@ -168,4 +174,14 @@ window.addEventListener('keydown', (e) => {
 playAgain.addEventListener('click', () => {
   resetGame()
   gameStart()
+})
+console.log(bgDiv)
+sideBar.forEach((div, index) => {
+  div.addEventListener('click', () => {
+    sideBar[0].style.backgroundImage = "url('../image/thunder.jpeg')"
+    sideBar[1].style.backgroundImage = "url('../image/thunder.jpeg')"
+
+    gameTitle.style.color = 'white'
+    gameTitle.style.backgroundColor = 'black'
+  })
 })
