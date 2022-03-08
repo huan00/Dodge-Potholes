@@ -77,6 +77,8 @@ h1 {
   width: 40%;
   height: 20%;
 
+  border-radius: 20px;
+  opacity: 0.8;
   padding: auto 20px;
   text-align: center;
   text-justify: center;
@@ -166,4 +168,17 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.sidebarDark {
+  height: 100%;
+  background-image: url('../Image/thunder.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gameTitle {
+  background-color: black;
+  color: white;
 }

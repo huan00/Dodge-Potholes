@@ -17,6 +17,7 @@ let myTimeout = undefined
 let health = 3
 let i = 1
 let score = 0
+let hitTime = 0
 
 //Game board grid size
 const gridSize = { x: 10, y: 2 }
@@ -52,20 +53,20 @@ const update = (num) => {
   if (num % 3 != 0) {
     createPothole()
   }
-
-  if (gameOver()) {
-    return
-  } else {
-    const potHole = document.querySelectorAll('.pothole')
-    potHole.forEach((hole) => {
-      if (hole.style.gridRowStart > 9) {
-        hole.parentNode.removeChild(hole)
-      } else if (hole.style.gridRowStart < 10) {
-        hole.style.gridRowStart++
-      }
-    })
-  }
+  healthBar.innerHTML = health
+  // if (gameOver()) {
+  //   return
+  // } else {
+  const potHole = document.querySelectorAll('.pothole')
+  potHole.forEach((hole) => {
+    if (hole.style.gridRowStart > 9) {
+      hole.parentNode.removeChild(hole)
+    } else if (hole.style.gridRowStart < 10) {
+      hole.style.gridRowStart++
+    }
+  })
 }
+// }
 
 const gameOver = () => {
   const poleHole = document.querySelectorAll('.pothole')
@@ -75,8 +76,10 @@ const gameOver = () => {
     const carX = carPos.style.gridColumnStart
     const carY = carPos.style.gridRowStart
 
-    if (carX === holeX && carY === holeY) {
-      health--
+    if (carX === holeX && carY === holeY && hitTime + 2 < i) {
+      health = health - 1
+      hitTime = i
+
       if (health === 2) {
         healthBar.classList.add('third')
       } else if (health === 1) {
@@ -103,11 +106,14 @@ const clearPotHole = () => {
 const resetGame = () => {
   currentScore.innerText = 0
   i = 0
+  carPos.style.gridRowStart = 9
+  carPos.style.gridColumnStart = 2
   clearPotHole()
   healthBar.classList.remove('one')
   healthBar.classList.remove('third')
   healthBar.classList.remove('dead')
   health = 3
+  hitTime = 0
   loseModal.style.display = 'none'
   speed = 1000
 }
@@ -120,12 +126,14 @@ const resetGame = () => {
 createCar()
 
 //////////////////////
-const gameStart = (timestamp) => {
+const gameStart = () => {
   currentScore.innerText = i
 
   speed > 400 ? (speed -= 10) : speed
 
   update(i)
+
+  const myInterval = setInterval(gameOver, 10)
 
   myTimeout = setTimeout(() => {
     requestAnimationFrame(gameStart)
@@ -175,12 +183,10 @@ playAgain.addEventListener('click', () => {
   gameStart()
 })
 
-sideBar.forEach((div, index) => {
+sideBar.forEach((div) => {
   div.addEventListener('click', () => {
-    sideBar[0].style.backgroundImage = "url('../image/thunder.jpeg')"
-    sideBar[1].style.backgroundImage = "url('../image/thunder.jpeg')"
-
-    gameTitle.style.color = 'white'
-    gameTitle.style.backgroundColor = 'black'
+    sideBar[0].classList.toggle('sidebarDark')
+    sideBar[1].classList.toggle('sidebarDark')
+    gameTitle.classList.toggle('gameTitle')
   })
 })
