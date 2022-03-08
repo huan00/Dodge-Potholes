@@ -55,6 +55,7 @@ h1 {
   background-position: center;
 
   border: none;
+  z-index: 100;
 }
 
 .pothole {
