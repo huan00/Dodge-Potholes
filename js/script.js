@@ -10,6 +10,7 @@ const healthBar = document.querySelector('#healthBar')
 const bgDiv = document.querySelectorAll('.background')
 const sideBar = document.querySelectorAll('.sidebar')
 const gameTitle = document.querySelector('#gameTitle')
+const arrowKeys = document.querySelectorAll('.arrowKeys')
 
 //global
 let speed = 1000
@@ -53,7 +54,7 @@ const update = (num) => {
   if (num % 3 != 0) {
     createPothole()
   }
-  healthBar.innerHTML = health
+  healthBar.innerHTML = `life: ${health}`
   // if (gameOver()) {
   //   return
   // } else {
@@ -87,6 +88,7 @@ const gameOver = () => {
       }
     }
     if (health <= 0) {
+      healthBar.innerHTML = `life: 0`
       healthBar.classList.add('dead')
       clearTimeout(myTimeout)
       speed = 1000000000
@@ -183,10 +185,41 @@ playAgain.addEventListener('click', () => {
   gameStart()
 })
 
-sideBar.forEach((div) => {
-  div.addEventListener('click', () => {
-    sideBar[0].classList.toggle('sidebarDark')
-    sideBar[1].classList.toggle('sidebarDark')
-    gameTitle.classList.toggle('gameTitle')
+// sideBar.forEach((div) => {
+//   div.addEventListener('click', () => {
+//     sideBar[0].classList.toggle('sidebarDark')
+//     sideBar[1].classList.toggle('sidebarDark')
+//     gameTitle.classList.toggle('gameTitle')
+//   })
+// })
+
+arrowKeys.forEach((key) => {
+  key.addEventListener('click', () => {
+    switch (key) {
+      case arrowKeys[1]:
+        if (carPos.style.gridRowStart < 2) {
+          break
+        }
+        carPos.style.gridRowStart--
+        break
+      case arrowKeys[3]:
+        if (carPos.style.gridRowStart > 8) {
+          break
+        }
+        carPos.style.gridRowStart++
+        break
+      case arrowKeys[0]:
+        if (carPos.style.gridColumnStart < 2) {
+          break
+        }
+        carPos.style.gridColumnStart--
+        break
+      case arrowKeys[2]:
+        if (carPos.style.gridColumnStart > 2) {
+          break
+        }
+        carPos.style.gridColumnStart++
+        break
+    }
   })
 })

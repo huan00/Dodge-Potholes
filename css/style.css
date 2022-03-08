@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-
-  /* border: 1px solid black; */
 }
 
 body {
@@ -11,6 +11,7 @@ body {
 
   text-align: center;
   overflow: hidden;
+  font-family: 'Syne Mono';
 }
 h1 {
   border-bottom: 3px solid black;
@@ -43,8 +44,11 @@ h1 {
   background-position: center;
 }
 
-.road {
-  border: 2px dotted;
+#healthBar {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  text-overflow: clip;
 }
 
 #car {
@@ -72,7 +76,7 @@ h1 {
 }
 
 #modal {
-  /* display: none; */
+  font-family: 'Syne Mono';
   position: absolute;
   width: 40%;
   height: 20%;
@@ -86,7 +90,14 @@ h1 {
 }
 button {
   cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
+
+#modal button:hover {
+  transform: scale(150%);
+}
+
 #content {
   position: relative;
   margin: 30px;
@@ -97,7 +108,7 @@ button {
 }
 
 #content ul {
-  border: 1px dotted white;
+  border: 1px dotted purple;
 }
 
 #content p {
@@ -181,4 +192,20 @@ button {
 .gameTitle {
   background-color: black;
   color: white;
+}
+
+.bg2 .sidebar {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+#controller {
+  align-items: baseline;
+  margin-bottom: 150px;
+  z-index: 100;
+}
+
+#controller button {
+  font-size: 1.5rem;
 }
