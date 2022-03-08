@@ -131,7 +131,7 @@ createCar()
 const gameStart = () => {
   currentScore.innerText = i
 
-  speed > 400 ? (speed -= 10) : speed
+  speed > 300 ? (speed -= 10) : speed
 
   update(i)
 
@@ -185,13 +185,11 @@ playAgain.addEventListener('click', () => {
   gameStart()
 })
 
-// sideBar.forEach((div) => {
-//   div.addEventListener('click', () => {
-//     sideBar[0].classList.toggle('sidebarDark')
-//     sideBar[1].classList.toggle('sidebarDark')
-//     gameTitle.classList.toggle('gameTitle')
-//   })
-// })
+sideBar[0].addEventListener('click', () => {
+  sideBar[0].classList.toggle('sidebarDark')
+  sideBar[1].classList.toggle('sidebarDark')
+  gameTitle.classList.toggle('gameTitle')
+})
 
 arrowKeys.forEach((key) => {
   key.addEventListener('click', () => {
