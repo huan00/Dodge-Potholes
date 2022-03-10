@@ -257,6 +257,7 @@ const animate = () => {
     return
   }
 
+  //main function for animation.
   requestAnimationFrame(animate)
   gameSpeed(score.score)
   score.update()
@@ -307,6 +308,7 @@ addEventListener('keydown', (e) => {
   }
 })
 
+//stop the car when key is release
 addEventListener('keyup', (e) => {
   switch (e.key) {
     case 'ArrowUp':
@@ -325,6 +327,7 @@ addEventListener('keyup', (e) => {
   }
 })
 
+//game start btn
 startBtn.addEventListener('click', () => {
   createPoleHole()
   animate()
@@ -336,8 +339,7 @@ playAgain.addEventListener('click', () => {
   location.reload()
 })
 
-console.log(arrowKeys)
-
+//on screen arrowkey
 arrowKeys.forEach((key) => {
   key.addEventListener('click', () => {
     switch (key) {

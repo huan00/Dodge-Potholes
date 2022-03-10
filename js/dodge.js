@@ -35,6 +35,7 @@ const createCar = () => {
   gameboard.appendChild(carDiv)
 }
 const createPothole = () => {
+  //randomly create pothole on top of grid
   const randY = Math.floor(Math.random() * 3) + 1
 
   const div = document.createElement('div')
@@ -46,6 +47,7 @@ const createPothole = () => {
 }
 
 const checkHealth = (health) => {
+  // link css animation with health bar.
   if (health === 2) {
     healthBar.classList.add('thrid')
   } else if (health === 1) {
@@ -54,13 +56,11 @@ const checkHealth = (health) => {
 }
 
 const update = (num) => {
+  //update gameplay, health, pothole movement
   if (num % 3 != 0) {
     createPothole()
   }
   healthBar.innerHTML = `life: ${health}`
-  // if (gameOver()) {
-  //   return
-  // } else {
   const potHole = document.querySelectorAll('.pothole')
   potHole.forEach((hole) => {
     if (hole.style.gridRowStart > 9) {
@@ -70,9 +70,9 @@ const update = (num) => {
     }
   })
 }
-// }
 
 const gameOver = () => {
+  //check gameover status
   const poleHole = document.querySelectorAll('.pothole')
   poleHole.forEach((hole) => {
     const holeX = hole.style.gridColumnStart
@@ -80,11 +80,13 @@ const gameOver = () => {
     const carX = carPos.style.gridColumnStart
     const carY = carPos.style.gridRowStart
 
+    //check if car hit pothole
     if (carX === holeX && carY === holeY && hitTime + 2 < i) {
       health = health - 1
       hitTime = i
       collisionSound.play()
 
+      //if car hitted, -- health
       if (health === 2) {
         healthBar.classList.add('third')
       } else if (health === 1) {
@@ -95,7 +97,7 @@ const gameOver = () => {
       healthBar.innerHTML = `life: 0`
       healthBar.classList.add('dead')
       clearTimeout(myTimeout)
-      speed = 1000000000
+      speed = 1000000000 //stop the movement
       loseModal.style.display = 'block'
       finalScore.innerText = currentScore.innerText
       return true
@@ -103,12 +105,15 @@ const gameOver = () => {
   })
 }
 
+//clear pothole funtion
 const clearPotHole = () => {
   const poleHole = document.querySelectorAll('.pothole')
   poleHole.forEach((hole) => {
     hole.parentNode.removeChild(hole)
   })
 }
+
+//reset game without reloading page.
 const resetGame = () => {
   currentScore.innerText = 0
   i = 0
@@ -130,9 +135,13 @@ const resetGame = () => {
  *
  *
  */
+
+//create the car object
 createCar()
 
 //////////////////////
+
+//Game start function
 const gameStart = () => {
   drivingSound.play()
   currentScore.innerText = i
@@ -155,9 +164,10 @@ start.addEventListener('click', () => {
   modal.style.display = 'none'
 })
 const carPos = document.querySelector('#car')
-//controlling the car
 
 //event listener for the game
+
+//controlling the car
 window.addEventListener('keydown', (e) => {
   switch (e.key) {
     case 'ArrowUp':
@@ -187,17 +197,20 @@ window.addEventListener('keydown', (e) => {
   }
 })
 
+//play the game again
 playAgain.addEventListener('click', () => {
   resetGame()
   gameStart()
 })
 
+//create dark theme when clicked
 sideBar[0].addEventListener('click', () => {
   sideBar[0].classList.toggle('sidebarDark')
   sideBar[1].classList.toggle('sidebarDark')
   gameTitle.classList.toggle('gameTitle')
 })
 
+//on screen key for mobile play
 arrowKeys.forEach((key) => {
   key.addEventListener('click', () => {
     switch (key) {
