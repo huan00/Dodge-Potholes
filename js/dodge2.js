@@ -309,7 +309,6 @@ addEventListener('keydown', (e) => {
 addEventListener('keyup', (e) => {
   switch (e.key) {
     case 'ArrowUp':
-      if (car.position.y >= canvas.height) return
       car.velocity.y = 0
       break
     case 'ArrowDown':
@@ -338,25 +337,25 @@ playAgain.addEventListener('click', () => {
 
 //on screen arrowkey
 arrowKeys.forEach((key) => {
-  key.addEventListener('click', () => {
+  key.addEventListener('mousedown', () => {
     switch (key) {
       case arrowKeys[1]:
-        car.velocity.y = -0.7
+        car.velocity.y = -1
 
         break
       case arrowKeys[3]:
         if (car.position.y >= canvas.height - 100) return
 
-        car.velocity.y = 0.7
+        car.velocity.y = 1
         break
       case arrowKeys[0]:
         if (car.position.x > 0) {
-          car.velocity.x = -0.7
+          car.velocity.x = -1
         }
         break
       case arrowKeys[2]:
         if (car.position.x + car.width < canvas.width) {
-          car.velocity.x = 0.7
+          car.velocity.x = 1
         }
         break
     }
@@ -364,7 +363,7 @@ arrowKeys.forEach((key) => {
 })
 
 arrowKeys.forEach((key) => {
-  key.addEventListener('mousedown', () => {
+  key.addEventListener('mouseup', () => {
     switch (key) {
       case arrowKeys[1]:
         car.velocity.y = 0
