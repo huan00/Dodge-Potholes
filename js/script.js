@@ -12,6 +12,9 @@ const sideBar = document.querySelectorAll('.sidebar')
 const gameTitle = document.querySelector('#gameTitle')
 const arrowKeys = document.querySelectorAll('.arrowKeys')
 
+const drivingSound = new Audio('../sound/driving.wav')
+const collisionSound = new Audio('../sound/collision.wav')
+
 //global
 let speed = 1000
 let myTimeout = undefined
@@ -80,6 +83,7 @@ const gameOver = () => {
     if (carX === holeX && carY === holeY && hitTime + 2 < i) {
       health = health - 1
       hitTime = i
+      collisionSound.play()
 
       if (health === 2) {
         healthBar.classList.add('third')
@@ -118,6 +122,7 @@ const resetGame = () => {
   hitTime = 0
   loseModal.style.display = 'none'
   speed = 1000
+  drivingSound.play()
 }
 
 /********************************************************************
@@ -129,6 +134,7 @@ createCar()
 
 //////////////////////
 const gameStart = () => {
+  drivingSound.play()
   currentScore.innerText = i
 
   speed > 300 ? (speed -= 10) : speed
@@ -151,6 +157,7 @@ start.addEventListener('click', () => {
 const carPos = document.querySelector('#car')
 //controlling the car
 
+//event listener for the game
 window.addEventListener('keydown', (e) => {
   switch (e.key) {
     case 'ArrowUp':
