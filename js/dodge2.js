@@ -34,7 +34,7 @@ class Car {
 
     //loading the image into the DOM, for the canvas
     const image = new Image()
-    image.src = '../image/red.png'
+    image.src = './image/red.png'
     image.onload = () => {
       this.image = image
       this.width = image.width * 0.04
@@ -76,7 +76,7 @@ class Pothole {
     }
     //preparing the load image
     const image = new Image()
-    image.src = '../image/potholev2.png'
+    image.src = './image/potholev2.png'
     image.onload = () => {
       this.image = image
       this.width = image.width * 0.07
