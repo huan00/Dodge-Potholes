@@ -166,7 +166,7 @@ const gameOver = () => {
     drivingSound.pause()
     modalAgain.style.display = 'block'
     ctx.fillStyle = 'black'
-    ctx.font = '30px Arial'
+    ctx.font = '20 Arial'
     ctx.textAlign = 'center'
     ctx.fillText('Your Tires Popped!!', canvas.width / 2, canvas.height / 2)
     ctx.fillText(
@@ -357,6 +357,32 @@ arrowKeys.forEach((key) => {
       case arrowKeys[2]:
         if (car.position.x + car.width < canvas.width) {
           car.velocity.x = 0.7
+        }
+        break
+    }
+  })
+})
+
+arrowKeys.forEach((key) => {
+  key.addEventListener('mousedown', () => {
+    switch (key) {
+      case arrowKeys[1]:
+        car.velocity.y = 0
+
+        break
+      case arrowKeys[3]:
+        if (car.position.y >= canvas.height - 100) return
+
+        car.velocity.y = 0
+        break
+      case arrowKeys[0]:
+        if (car.position.x > 0) {
+          car.velocity.x = 0
+        }
+        break
+      case arrowKeys[2]:
+        if (car.position.x + car.width < canvas.width) {
+          car.velocity.x = 0
         }
         break
     }
