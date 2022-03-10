@@ -241,7 +241,12 @@ button {
 }
 
 .bg1 {
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+}
+.bg1 p {
+  margin: 50px 0;
 }
 
 @media screen and (max-width: 750px) {
