@@ -19,16 +19,25 @@
 - use **arrow keys** to control car.
 - dodge potholes appear on highway
 - get the highest score
+- dodge2 ONLY - stay inside the highway
+
+### Two verison of the game below
+
+#### Retro Dodge version 1 of the game. Same style of game play.
 
 <figure>
-  <img src='./Image/highway%20pothole.jpeg' width='400' height='400'>
+<figcaption>Retro Dodge</figcaption>
+  <img src='./image/dodge1.png' width='400' height='400'>
 </figure>
 
+#### Dodge version 2, animation smoothness improved from v1. Same gameplay style.
+
+##### play attention to the health bar.
+
 <figure>
-<figcaption>similar game to traffic racer</figcaption>
-  <image src='./Image/moving%20image.gif'
+<figcaption>Dodge V2</figcaption>
+  <image src='./image/dodge2.png'
   width='400' height='400'>
-  
 </figure>
 
 ---
@@ -36,10 +45,14 @@
 #### Future Updates:
 
 - add other cars into role.
-- add player health.
+- ~~added player health.~~
+- ~~added gameplay sounds.~~
+- ~~make dark theme for game v1.~~
+- ~~added levels base on score~~
 
 ---
 
 #### Credits:
 
-Image: [google](https://google.com)
+Images, and soudns from: [google](https://google.com) <br>
+Javascript formula: [MDN JavaScript](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection)
