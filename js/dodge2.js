@@ -14,7 +14,7 @@ const collisionSound = new Audio('../sound/collision.wav')
 
 //set canvas size
 canvas.width = innerWidth * 0.3
-canvas.height = innerHeight - 50
+canvas.height = innerHeight * 0.9
 
 //global varible
 let health = canvas.width
