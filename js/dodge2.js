@@ -8,9 +8,9 @@ const modal = document.querySelector('#modal')
 const playAgain = document.querySelector('#playAgain')
 const modalAgain = document.querySelector('#modalAgain')
 const arrowKeys = document.querySelectorAll('.arrowKeys')
-const drivingSound = new Audio('../sound/driving.wav')
-const levelSound = new Audio('../sound/level.mp3')
-const collisionSound = new Audio('../sound/collision.wav')
+const drivingSound = new Audio('./sound/driving.wav')
+const levelSound = new Audio('./sound/level.mp3')
+const collisionSound = new Audio('./sound/Collision.wav')
 
 //set canvas size
 canvas.width = innerWidth * 0.3
@@ -163,7 +163,7 @@ const checkCollision = () => {
 //game over display.
 const gameOver = () => {
   if (gameover) {
-    loopAudio(drivingSound).pause()
+    drivingSound.pause()
     modalAgain.style.display = 'block'
     ctx.fillStyle = 'black'
     ctx.font = '30px Arial'

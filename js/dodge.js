@@ -13,7 +13,7 @@ const gameTitle = document.querySelector('#gameTitle')
 const arrowKeys = document.querySelectorAll('.arrowKeys')
 
 const drivingSound = new Audio('../sound/driving.wav')
-const collisionSound = new Audio('../sound/collision.wav')
+const collisionSound = new Audio('../sound/Collision.wav')
 
 //global
 let speed = 1000
