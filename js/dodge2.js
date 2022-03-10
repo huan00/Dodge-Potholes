@@ -341,22 +341,22 @@ arrowKeys.forEach((key) => {
   key.addEventListener('click', () => {
     switch (key) {
       case arrowKeys[1]:
-        car.velocity.y = -1
+        car.velocity.y = -0.7
 
         break
       case arrowKeys[3]:
         if (car.position.y >= canvas.height - 100) return
 
-        car.velocity.y = 1
+        car.velocity.y = 0.7
         break
       case arrowKeys[0]:
         if (car.position.x > 0) {
-          car.velocity.x = -1
+          car.velocity.x = -0.7
         }
         break
       case arrowKeys[2]:
         if (car.position.x + car.width < canvas.width) {
-          car.velocity.x = 1
+          car.velocity.x = 0.7
         }
         break
     }

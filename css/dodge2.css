@@ -128,10 +128,10 @@ body button {
 }
 
 #screenKey {
-  display: none;
+  display: flex;
   position: absolute;
   left: 50%;
-  top: 90%;
+  top: 95%;
 
   transform: translate(-40%);
 }
@@ -143,10 +143,4 @@ body button {
   position: static;
   width: 40px;
   height: 40px;
-}
-
-@media screen and (max-width: 550px) {
-  #screenKey {
-    display: flex;
-  }
 }
