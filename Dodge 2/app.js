@@ -5,6 +5,8 @@ const texas = document.querySelector('#texas')
 const sanDiego = document.querySelector('#sanDiego')
 const startBtn = document.querySelector('#start')
 const modal = document.querySelector('#modal')
+const playAgain = document.querySelector('#playAgain')
+const modalAgain = document.querySelector('#modalAgain')
 
 canvas.width = innerWidth * 0.3
 canvas.height = innerHeight - 50
@@ -145,6 +147,7 @@ const checkCollision = () => {
 
 const gameOver = () => {
   if (gameover) {
+    modalAgain.style.display = 'block'
     ctx.fillStyle = 'black'
     ctx.font = '30px Arial'
     ctx.textAlign = 'center'
@@ -157,11 +160,6 @@ const gameOver = () => {
   }
 }
 
-// const createPoleHole = (time, divider) => {
-//   if (time % divider === 0) {
-//     pothole.push(new Pothole())
-//   }
-// }
 const createPoleHole = (time, score) => {
   if (score > 1000 && score < 2000) {
     if (time % 50 === 0) {
@@ -226,7 +224,6 @@ const animate = () => {
 
   requestAnimationFrame(animate)
   gameSpeed(score.score)
-  // createPoleHole(speed, pothole)
   score.update()
   healthBar.update()
   pothole.forEach((hole, index) => {
@@ -278,20 +275,16 @@ addEventListener('keydown', (e) => {
 addEventListener('keyup', (e) => {
   switch (e.key) {
     case 'ArrowUp':
-      console.log('up')
       if (car.position.y >= canvas.height) return
       car.velocity.y = 0
       break
     case 'ArrowDown':
-      console.log('down')
       car.velocity.y = 0
       break
     case 'ArrowLeft':
-      console.log('Left')
       car.velocity.x = 0
       break
     case 'ArrowRight':
-      console.log('Right')
       car.velocity.x = 0
       break
   }
@@ -301,4 +294,8 @@ startBtn.addEventListener('click', () => {
   createPoleHole()
   animate()
   modal.style.display = 'none'
+})
+
+playAgain.addEventListener('click', () => {
+  location.reload()
 })
