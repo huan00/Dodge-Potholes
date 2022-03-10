@@ -41,7 +41,7 @@ class Car {
       this.height = image.height * 0.04
       this.position = {
         x: canvas.width / 2 - this.width / 2,
-        y: canvas.height - 100
+        y: canvas.height * 0.8
       }
     }
   }
@@ -142,8 +142,9 @@ class keepScore {
 const checkCollision = () => {
   pothole.forEach((hole) => {
     if (
-      //use javascript Rect collision formula to check collision in the game
-      (car.position.x < hole.position.x + hole.width &&
+      (time > 100 &&
+        //use javascript Rect collision formula to check collision in the game
+        car.position.x < hole.position.x + hole.width &&
         car.position.x + car.width > hole.position.x &&
         car.position.y < hole.position.y + hole.height &&
         car.height + car.position.y > hole.position.y) ||
@@ -162,6 +163,7 @@ const checkCollision = () => {
 //game over display.
 const gameOver = () => {
   if (gameover) {
+    loopAudio(drivingSound).pause()
     modalAgain.style.display = 'block'
     ctx.fillStyle = 'black'
     ctx.font = '30px Arial'
@@ -222,7 +224,6 @@ const gameSpeed = (score) => {
   if (score > 1000 && score < 2000) {
     pothole.forEach((hole) => {
       hole.velocity.y = 2
-      console.log('velocity 2')
     })
   } else if (score > 2000 && score < 3000) {
     pothole.forEach((hole) => {
@@ -263,10 +264,9 @@ const animate = () => {
   score.update()
   healthBar.update()
   pothole.forEach((hole, index) => {
-    if (hole.position.y > canvas.height) {
+    if (time > 500 && hole.position.y > canvas.height) {
       setTimeout(() => {
         pothole.splice(index, 1)
-        console.log(pothole)
       }, 0)
     } else {
       hole.update()
@@ -281,7 +281,6 @@ const animate = () => {
 
 //event listener for the game
 addEventListener('keydown', (e) => {
-  console.log(e.key)
   switch (e.code) {
     case 'ArrowUp':
       if (car.position.y >= 0) {
@@ -290,17 +289,15 @@ addEventListener('keydown', (e) => {
       break
     case 'ArrowDown':
       if (car.position.y >= canvas.height - 100) return
-      console.log('down')
+
       car.velocity.y = 5
       break
     case 'ArrowLeft':
-      console.log('Left')
       if (car.position.x > 0) {
         car.velocity.x = -5
       }
       break
     case 'ArrowRight':
-      console.log('Right')
       if (car.position.x + car.width < canvas.width) {
         car.velocity.x = 5
       }
@@ -345,11 +342,11 @@ arrowKeys.forEach((key) => {
     switch (key) {
       case arrowKeys[1]:
         car.velocity.y = -1
-        console.log('hello')
+
         break
       case arrowKeys[3]:
         if (car.position.y >= canvas.height - 100) return
-        console.log('down')
+
         car.velocity.y = 1
         break
       case arrowKeys[0]:

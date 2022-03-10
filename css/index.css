@@ -22,10 +22,9 @@ body {
 }
 
 header {
-  height: fit-content;
-
   background-color: #424b54;
   color: #ffffff;
+  width: 100vw;
 }
 
 header h1 {
