@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +14,7 @@ body {
 
   overflow: hidden;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -68,6 +71,7 @@ main {
   text-align: left;
   padding: 20px 20px 0 20px;
   background-color: rgb(66, 62, 62);
+  color: white;
 }
 
 #dodge1 {
