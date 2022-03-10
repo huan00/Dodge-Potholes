@@ -167,7 +167,7 @@ const gameOver = () => {
   if (gameover) {
     drivingSound.pause()
     modalAgain.style.display = 'block'
-    ctx.fillStyle = 'black'
+    ctx.fillStyle = 'red'
     ctx.font = '20 Arial'
     ctx.textAlign = 'center'
     ctx.fillText('Your Tires Popped!!', canvas.width / 2, canvas.height / 2)
@@ -338,7 +338,7 @@ playAgain.addEventListener('click', () => {
 
 //on screen arrowkey
 arrowKeys.forEach((key) => {
-  key.addEventListener('mousedown', () => {
+  key.addEventListener('pointerdown', () => {
     switch (key) {
       case arrowKeys[1]:
         car.velocity.y = -1
