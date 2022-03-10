@@ -15,6 +15,8 @@ const collisionSound = new Audio('./sound/Collision.wav')
 //set canvas size
 canvas.width = innerWidth * 0.3
 canvas.height = innerHeight * 0.9
+const highwayImage = new Image()
+highwayImage.src = './image/highwayRoad.png'
 
 //global varible
 let health = canvas.width
@@ -127,7 +129,7 @@ class keepScore {
   }
 
   draw() {
-    ctx.fillStyle = 'black'
+    ctx.fillStyle = 'white'
     ctx.font = '20px Arial'
     ctx.fillText(`Score: ${this.score}`, canvas.width - 120, 35)
   }
@@ -251,8 +253,7 @@ const score = new keepScore()
 const animate = () => {
   speed++
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  ctx.fillStyle = 'grey'
-  ctx.fillRect(0, 0, canvas.width, canvas.height)
+  ctx.drawImage(highwayImage, 0, 0, canvas.width, canvas.height)
   if (gameover) {
     gameOver()
     return
