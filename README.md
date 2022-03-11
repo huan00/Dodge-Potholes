@@ -28,7 +28,7 @@
 
 <figure>
 <figcaption>Retro Dodge</figcaption>
-  <img src='./image/dodge1.png' width='400' height='400'>
+  <img src='./image/Dodge1.png' width='400' height='400'>
 </figure>
 
 #### Dodge version 2, animation smoothness improved from v1. Same gameplay style.
@@ -37,7 +37,7 @@
 
 <figure>
 <figcaption>Dodge V2</figcaption>
-  <image src='./image/dodge2.png'
+  <image src='./image/Dodge2.png'
   width='400' height='400'>
 </figure>
 
