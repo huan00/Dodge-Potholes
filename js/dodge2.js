@@ -160,7 +160,7 @@ const checkCollision = () => {
     if (
       (time > 100 &&
         //use javascript Rect collision formula to check collision in the game
-        car.position.x < hole.position.x + hole.width &&
+        car.position.x < hole.position.x + hole.width - 3 &&
         car.position.x + car.width > hole.position.x &&
         car.position.y < hole.position.y + hole.height &&
         car.height + car.position.y > hole.position.y) ||
