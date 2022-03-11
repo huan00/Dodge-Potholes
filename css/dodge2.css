@@ -136,7 +136,7 @@ body button {
 }
 
 #screenKey {
-  display: grid;
+  display: none;
   grid-column: 1fr 1fr / 1fr 2fr 1fr;
   justify-content: center;
   position: absolute;
@@ -175,4 +175,16 @@ body button {
 #downArrow {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+}
+
+@media screen and (max-width: 830px) {
+  #screenKey {
+    display: grid;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #screenKey {
+    display: grid;
+  }
 }

@@ -197,7 +197,11 @@ const loopAudio = (audio) => {
 
 //creating different level for the game base on score.
 const createPoleHole = (time, score) => {
-  if (score > 1000 && score < 2000) {
+  if (score < 1000) {
+    if (time % 100 === 0) {
+      pothole.push(new Pothole())
+    }
+  } else if (score > 1000 && score < 2000) {
     if (time % 50 === 0) {
       pothole.push(new Pothole())
       if (score > 1000 && score < 1100) {
@@ -218,17 +222,69 @@ const createPoleHole = (time, score) => {
         levelSound.play()
       }
     }
-  } else if (score > 4000) {
-    if (time % 10 === 0) {
+  } else if (score > 4000 && score < 5000) {
+    if (time % 30 === 0) {
       pothole.push(new Pothole())
       pothole.push(new Pothole())
       if (score === 4000 && score < 4100) {
         levelSound.play()
       }
     }
-  } else {
-    if (time % 100 === 0) {
+  } else if (score > 5000 && score < 6000) {
+    if (time % 30 === 0) {
       pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      if (score === 5000 && score < 5100) {
+        levelSound.play()
+      }
+    }
+  } else if (score > 6000 && score < 7000) {
+    if (time % 30 === 0) {
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      if (score === 6000 && score < 6100) {
+        levelSound.play()
+      }
+    }
+  } else if (score > 7000 && score < 8000) {
+    if (time % 30 === 0) {
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      if (score === 7000 && score < 8100) {
+        levelSound.play()
+      }
+    }
+  } else if (score > 8000 && score < 9000) {
+    if (time % 30 === 0) {
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      if (score === 8000 && score < 8100) {
+        levelSound.play()
+      }
+    }
+  } else if (score > 9000) {
+    if (time % 30 === 0) {
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      pothole.push(new Pothole())
+      if (score === 9000 && score < 9100) {
+        levelSound.play()
+      }
     }
   }
 }
@@ -247,9 +303,17 @@ const gameSpeed = (score) => {
     pothole.forEach((hole) => {
       hole.velocity.y = 6
     })
-  } else if (score > 5000) {
+  } else if (score > 4000 && score < 5000) {
     pothole.forEach((hole) => {
       hole.velocity.y = 8
+    })
+  } else if (score > 5000 && score < 6000) {
+    pothole.forEach((hole) => {
+      hole.velocity.y = 10
+    })
+  } else if (score > 6000) {
+    pothole.forEach((hole) => {
+      hole.velocity.y = 10
     })
   }
 }
