@@ -4,13 +4,15 @@
 
 #### By: Huan Zeng
 
-##### [Trello](https://trello.com/b/KJetNlie/dodge-potholes) | [GitHub](https://github.com/huan00/Dodge-Potholes)
+##### [Trello](https://trello.com/b/KJetNlie/dodge-potholes) | [GitHub](https://github.com/huan00/Dodge-Potholes) | [Game](https://dodgepothole.surge.sh/) [Linkdin](linkedin.com/in/huan-zeng)
 
 ---
 
 ## _Description:_
 
 #### In this game, the player will use the arrow keys on the keyboard to control a car diving down a highway. The main objective of the game is to down potholes on the highway.
+
+#### This is the first Project for GA Immerseive built with JavaScript
 
 ---
 
@@ -22,7 +24,8 @@
 - get the highest score
 - dodge2 ONLY - stay inside the highway
 
-####play the game here<br>
+#### play the game here<br>
+
 [Game](https://dodgepothole.surge.sh/)
 
 ### Two verison of the game below
