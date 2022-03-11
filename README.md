@@ -44,6 +44,21 @@
 
 ---
 
+### Language
+
+- HTML5
+  - canvas
+- CSS
+  - Grid
+  - Flex
+- JavaScript
+  - event handlers
+  - requestAnimationFrame
+  - Class
+  - Objects
+
+---
+
 #### Future Updates:
 
 - add other cars into role.
