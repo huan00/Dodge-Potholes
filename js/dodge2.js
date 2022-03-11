@@ -219,7 +219,8 @@ const createPoleHole = (time, score) => {
       }
     }
   } else if (score > 4000) {
-    if (time % 8 === 0) {
+    if (time % 10 === 0) {
+      pothole.push(new Pothole())
       pothole.push(new Pothole())
       if (score === 4000 && score < 4100) {
         levelSound.play()

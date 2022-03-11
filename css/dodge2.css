@@ -9,8 +9,9 @@ body {
   text-align: center;
   height: 100vh;
   overflow: hidden;
-  background-image: url('../Image/valley.jpg');
+  background-image: url('../Dodge\ 2/image/topview2.jpg');
   background-size: cover;
+  background-position: center;
 
   display: grid;
   grid-template: 50px auto / 50px auto;
@@ -145,8 +146,8 @@ body button {
   margin: 5px;
   display: block;
   position: static;
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 #leftArrow {
