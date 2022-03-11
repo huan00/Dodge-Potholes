@@ -12,14 +12,14 @@ const drivingSound = new Audio('./sound/driving.wav')
 const levelSound = new Audio('./sound/level.mp3')
 const collisionSound = new Audio('./sound/Collision.wav')
 
-drivingSound.volume = 0.5
-collisionSound.volume = 0.3
+drivingSound.volume = 0.1
+collisionSound.volume = 0.02
 
 //set canvas size
 //custom canvas size
 let ww = parseInt(innerWidth)
-const customWidth = (x) => {
-  let ww = x
+const customWidth = (width) => {
+  let ww = width
   if (ww > 500) {
     return ww * 0.3
   } else {
