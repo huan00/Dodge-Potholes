@@ -54,7 +54,7 @@ class Car {
       this.height = image.height * 0.04
       this.position = {
         x: canvas.width / 2 - this.width / 2,
-        y: canvas.height * 0.8
+        y: canvas.height * 0.7
       }
     }
   }
