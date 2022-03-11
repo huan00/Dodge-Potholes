@@ -17,6 +17,7 @@
 ### Game Play
 
 - use **arrow keys** to control car.
+  -- (pc players use keyboard arrow keys)
 - dodge potholes appear on highway
 - get the highest score
 - dodge2 ONLY - stay inside the highway
@@ -49,6 +50,7 @@
 - ~~added gameplay sounds.~~
 - ~~make dark theme for game v1.~~
 - ~~added levels base on score~~
+- ~~added landing page for both game~~
 
 ---
 
