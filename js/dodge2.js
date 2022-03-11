@@ -13,7 +13,18 @@ const levelSound = new Audio('./sound/level.mp3')
 const collisionSound = new Audio('./sound/Collision.wav')
 
 //set canvas size
-canvas.width = innerWidth * 0.3
+//custom canvas size
+let ww = parseInt(innerWidth)
+const customWidth = (x) => {
+  let ww = x
+  if (ww > 500) {
+    return ww * 0.3
+  } else {
+    return ww * 0.6
+  }
+}
+
+canvas.width = customWidth(ww)
 canvas.height = innerHeight * 0.9
 const highwayImage = new Image()
 highwayImage.src = './image/highwayRoad.png'
