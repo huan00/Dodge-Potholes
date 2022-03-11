@@ -14,6 +14,8 @@ const arrowKeys = document.querySelectorAll('.arrowKeys')
 
 const drivingSound = new Audio('../sound/driving.wav')
 const collisionSound = new Audio('../sound/Collision.wav')
+drivingSound.volume = 0.5
+collisionSound.volume = 0.3
 
 //global
 let speed = 1000

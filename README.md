@@ -26,7 +26,7 @@
 
 #### Retro Dodge version 1 of the game. Same style of game play.
 
-<img src='https://github.com/huan00/Dodge-Potholes/blob/3888aecd2a52d5d20e2cc8de59abdb6d3ae4afd6/Image/Dodge1.png' width='400' height='400'>
+<img src='Image/Dodge1.png' width='400' height='400'>
 
 #### Dodge version 2, animation smoothness improved from v1. Same gameplay style.
 
