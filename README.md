@@ -26,20 +26,15 @@
 
 #### Retro Dodge version 1 of the game. Same style of game play.
 
-<figure>
-<figcaption>Retro Dodge</figcaption>
-  <img src='./image/Dodge1.png' width='400' height='400'>
-</figure>
+<img src='./image/Dodge1.png' width='400' height='400'>
 
 #### Dodge version 2, animation smoothness improved from v1. Same gameplay style.
 
 ##### play attention to the health bar.
 
-<figure>
-<figcaption>Dodge V2</figcaption>
-  <image src='./image/Dodge2.png'
-  width='400' height='400'>
-</figure>
+#### Dodge V2
+
+<image src='./image/Dodge2.png' width='400' height='400'>
 
 ---
 
