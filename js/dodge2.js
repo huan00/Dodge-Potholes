@@ -164,7 +164,7 @@ const checkCollision = () => {
         car.position.x + car.width > hole.position.x &&
         car.position.y < hole.position.y + hole.height &&
         car.height + car.position.y > hole.position.y) ||
-      car.position.x < 0 ||
+      car.position.x < 0 - car.width ||
       car.position.x > canvas.width
     ) {
       health--
