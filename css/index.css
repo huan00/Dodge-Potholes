@@ -102,7 +102,7 @@ nav ul li {
 
 #game div img {
   height: auto;
-  width: 30rem;
+  width: 275px;
   padding: 20px;
 
   border-radius: 20%;
@@ -120,14 +120,7 @@ nav ul li {
     flex-direction: column;
   }
 
-  #dodge1 img {
-    height: auto;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 20%;
-  }
-
-  #dodge2 img {
+  #dodge1 div img {
     height: auto;
     width: 200px;
     object-fit: cover;
@@ -146,11 +139,41 @@ nav ul li {
     text-justify: center;
     margin: 0 10px;
   }
+}
 
-  nav ul li img {
+@media screen and (max-width: 400px) {
+  body {
+    overflow: auto;
+  }
+  #game {
+    display: flex;
+    flex-direction: column;
   }
 
-  span {
-    margin: 0 20px;
+  #game div img {
+    height: auto;
+    width: 200px;
+    object-fit: cover;
+    /* border-radius: 20%; */
+  }
+
+  #dodge2 img {
+    height: auto;
+    width: 2px;
+    object-fit: cover;
+    border-radius: 20%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    align-items: center;
+  }
+  nav ul li {
+    list-style-type: none;
+    text-align: center;
+    text-justify: center;
+    margin: 0 10px;
   }
 }
