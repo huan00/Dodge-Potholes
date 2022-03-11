@@ -22,6 +22,9 @@
 - get the highest score
 - dodge2 ONLY - stay inside the highway
 
+####play the game here<br>
+[Game](https://dodgepothole.surge.sh/)
+
 ### Two verison of the game below
 
 #### Retro Dodge version 1 of the game. Same style of game play.
