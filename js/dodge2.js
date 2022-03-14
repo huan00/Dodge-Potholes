@@ -1,8 +1,5 @@
 const canvas = document.querySelector('#myCanvas')
 const ctx = canvas.getContext('2d')
-const NYC = document.querySelector('#NYC')
-const texas = document.querySelector('#texas')
-const sanDiego = document.querySelector('#sanDiego')
 const startBtn = document.querySelector('#start')
 const modal = document.querySelector('#modal')
 const playAgain = document.querySelector('#playAgain')
@@ -15,9 +12,16 @@ const collisionSound = new Audio('./sound/Collision.wav')
 drivingSound.volume = 0.1
 collisionSound.volume = 0.02
 
+//global varible
 //set canvas size
 //custom canvas size
 let ww = parseInt(innerWidth)
+let health = canvas.width
+let gameover = false
+let speed = 0
+let time = 0
+let divider = 100
+
 const customWidth = (width) => {
   let ww = width
   if (ww > 500) {
@@ -31,13 +35,6 @@ canvas.width = customWidth(ww)
 canvas.height = innerHeight * 0.9
 const highwayImage = new Image()
 highwayImage.src = './image/highwayRoad.png'
-
-//global varible
-let health = canvas.width
-let gameover = false
-let speed = 0
-let time = 0
-let divider = 100
 
 //creating the car class
 class Car {
